@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // connect to MongoDB
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=> console.log('MongoDB connected'))
+mongoose.connect(MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
   .catch(err => console.error(err));
+
 
 app.get('/api/ping', (req, res) => res.json({ ok: true }));
 
